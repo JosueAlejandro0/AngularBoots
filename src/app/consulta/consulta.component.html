@@ -48,28 +48,80 @@
         <div *ngIf="list">
           <h3>Búsqueda</h3>  
           <br>
-          <table id="table"   class="table table-striped table-bordered nowrap" style="width:100%">
-              <thead>
-              <tr>
-                  <th>#</th>
-                  <th>Fecha Inicio</th>
-                  <th>Fecha Fin</th>
-                  <th>RFC</th>
-                  
-              </tr>
-              </thead>
-              <tbody>
-              <tr *ngFor="let client of clients">
-                  <td>{{client.id}}</td>
-                  <td>{{client.firstName}}</td>
-                  <td>{{client.lastName}}</td>
-                  <td>{{client.company}}</td>
-              </tr>
-              </tbody>
-          </table>
+
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" style="background-color:#343a40" id="headingOne">
+                <h2 class="mb-0">
+                  <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Encontrados
+                  </button>
+                </h2>
+              </div>
+          
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                  <table id="table"  class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Fecha Inicio</th>
+                        <th>Fecha Fin</th>
+                        <th>RFC</th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let client of clients">
+                        <td>{{client.id}}</td>
+                        <td>{{client.firstName}}</td>
+                        <td>{{client.lastName}}</td>
+                        <td>{{client.company}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" style="background-color:#343a40"  id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-dark collapsed"  type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    No Encontrados
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                  <table id="table"  class="table table-striped table-bordered" style="width:100%">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Fecha Inicio</th>
+                        <th>Fecha Fin</th>
+                        <th>RFC</th>
+                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let client of clients">
+                        <td>{{client.id}}</td>
+                        <td>{{client.firstName}}</td>
+                        <td>{{client.lastName}}</td>
+                        <td>{{client.company}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      
           <hr>   
         </div>
 
+    
     </div>
 </div>
   

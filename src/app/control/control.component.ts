@@ -20,6 +20,7 @@ export class ControlComponent implements OnInit {
   onSubmit(Filterform:NgForm){
     console.log(Filterform)
     console.log(Filterform.value)
+    
     return this.http.post(this.url,Filterform.value, { headers: {'Content-Type': 'application/json','Access-Control-Allow-Origin': '*' }, responseType: 'text'  })
     .subscribe( resp =>{
         console.log(resp);
