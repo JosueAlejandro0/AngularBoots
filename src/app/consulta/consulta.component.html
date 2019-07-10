@@ -1,0 +1,75 @@
+<div class="container2">
+    <div class="logo">
+      <div class="row text-center align-items-center">
+        <div class="col-sm-12" style="padding: 0px;">
+          <img src="../../assets/images/Logo_SHCP_SAT.jpg" alt="" srcset="">
+        </div>
+        <br>
+      </div>
+    </div>
+    <div class="formulary">
+      
+        <h2>Consulta de RFC´s o CURP´s con operaciones presuntamente inexistentes</h2>
+        <hr class="red small-margin">   
+        
+        <div class="container">
+            <form #todoForm= "ngForm" (keydown.enter)="$event.preventDefault(); addTodo(todo.value); todoForm.resetForm()"(ngSubmit)="addTodo(todo.value); todoForm.resetForm()">  
+              <p class="text-center" style="font-size: 25px; font-weight: lighter;margin-bottom: 20px;">Ingresa RFC´s o CURP´s</p>   
+              
+              <div class="datos">  
+                  <div class="form-group row" >       
+                      <input type="text" [disabled]="hid" #todo="ngModel" class="form-control col-sm-11" placeholder=" Ingrese un valor entre 12 a 16 respectivamente sea CURP o RFC. Sin espacios o guiones" name="todo" ngModel required minlength="12" maxlength="16">
+                      <button class="btn btn-dark col-sm-1" [disabled]="hid"  type="submit"><i class="fas fa-plus-circle"  style="padding-top:5px"></i></button>
+                  </div>
+                  <div class="row">
+                     <div *ngIf="alert && !todo.valid" class="alert alert-danger col-sm-12" role="alert">
+                       FAVOR DE INGRESAR LA INFORMACIÓN EN EL FORMATO SOLICITADO
+                    </div>
+                      <div *ngIf="alert2" class="alert alert-warning col-sm-12" role="alert">
+                        SOLO SE PERMITEN 20 REGISTROS
+                     </div>
+                  </div>   
+              </div>  
+              
+              <div class="data-list">  
+                   <ul class="list-group">   
+                       <li class="list-group-item" *ngFor="let todo of todoArray">{{todo}} <i (click)="deleteItem(todo)" class="fas fa-trash " style="float: right; padding-top: 3px;" ></i></li>
+                  </ul>
+                 <div class="data-button" style="margin-top: 8px;">
+                   <button *ngIf="button" (click)="todoSubmit(); todoForm.resetForm()" class="btn btn-dark  btn-block" >ENVIAR</button>
+                 </div>    
+              </div>
+            </form>    
+        </div>
+
+        <br>
+        <hr>
+
+        <div *ngIf="list">
+          <h3>Búsqueda</h3>  
+          <br>
+          <table id="table"   class="table table-striped table-bordered nowrap" style="width:100%">
+              <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Fecha Inicio</th>
+                  <th>Fecha Fin</th>
+                  <th>RFC</th>
+                  
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let client of clients">
+                  <td>{{client.id}}</td>
+                  <td>{{client.firstName}}</td>
+                  <td>{{client.lastName}}</td>
+                  <td>{{client.company}}</td>
+              </tr>
+              </tbody>
+          </table>
+          <hr>   
+        </div>
+
+    </div>
+</div>
+  

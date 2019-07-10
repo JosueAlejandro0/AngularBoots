@@ -1,0 +1,58 @@
+<div class="container2">
+  
+  <div class="logo">
+      <div class="row text-center align-items-center">
+          <div class="col-sm-12"><img src="../../assets/images/Logo_SHCP_SAT.jpg" alt="" srcset=""></div>
+          <br>
+      </div>
+  </div>
+
+  <div class="formulary">
+      <div class="row">
+          <div class="col-md-6" style="margin-bottom:40px;">
+                  <h3>Acuse Original</h3>
+                  <hr class="red small-margin">
+              
+                      <div class="form-group row">       
+                          <div class="col-sm-12">
+                            <label for="Fechain">Información</label>
+                            <textarea class="form-control" rows="5"  disabled></textarea>
+                          </div>                 
+                      </div>
+          </div>
+          
+        <div class="col-md-6">
+            <h3> Edición de Acuse</h3>  
+            <hr class="red small-margin">
+        
+            <form #FilterForm= "ngForm"  (ngSubmit)="onSubmit(FilterForm); FilterForm.resetForm()" ngNativeValidate>  
+                
+                <div class="form-group row">       
+                  <div class="col-sm-12">
+                    <label for="Fechain">Ingresar Información</label>
+                    <textarea #acuse="ngModel" class="form-control" rows="5" name="acuse" ngModel required></textarea>
+                  </div>   
+                </div>
+            
+                <div class="error">
+                  <div *ngIf="acuse.invalid && acuse.touched" class="alert alert-danger col-sm-12" role="alert">
+                    FAVOR DE INGRESAR LOS CAMBIOS
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <div class="col-sm-12">
+                    <button type="submit"  class="btn btn-dark  btn-block" >GUARDAR</button>
+                  </div>
+                </div>
+            
+            </form>
+        </div>
+      </div>
+        
+    
+      <hr>     
+  </div>
+</div>
+
+

@@ -1,0 +1,80 @@
+
+<div class="container2">
+    <div class="logo">
+        <div class="row text-center align-items-center">
+            <div class="col-sm-12" ><img src="../../assets/images/Logo_SHCP_SAT.jpg" alt="" srcset=""></div>
+            <br>
+        </div>
+    </div>
+    <div class="formulary">
+            <h2>Actividad</h2>
+            <hr class="red small-margin">
+      
+            <form #FilterForm= "ngForm"  (ngSubmit)="onSubmit(FilterForm); FilterForm.resetForm()" ngNativeValidate>  
+              <p class="text-center" style="font-size: 25px; font-weight: lighter;margin-bottom: 20px;">Ingresa los siguientes datos</p>               
+            
+                  <div class="form-group row">       
+                    <div class="col-lg-3">
+                      <label for="Fechain">Ingresar Fecha Inicio*</label>
+                      <input type="date"  #Fechain="ngModel" class="form-control" name="Fechain" ngModel required>
+                    </div>   
+                    <div class="col-lg-3">
+                      <label for="Fechafin">Ingresar Fecha Fin*</label>
+                      <input type="date"  #Fechafin="ngModel" class="form-control" name="Fechafin" ngModel required>
+                    </div>   
+                    <div class="col-lg-3">
+                        <label for="Fechain">Ingresar RFC</label>
+                        <input type="text"  #RFC="ngModel" class="form-control" name="RFC" ngModel >
+                    </div>
+                    <div class="col-lg-3">
+                            <label for="Fechain">Ingresar estatus</label>
+                            <select class="form-control" #Select="ngModel" name="Select" ngModel>
+                                  <option value='' selected hidden>Elige una opción</option>      
+                                  <option>BAJA</option>
+                                  <option>ALTA</option>
+                            </select>
+                    </div>   
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-sm-12">
+                      <button type="submit"  class="btn btn-dark  btn-block" >ENVIAR</button>
+                    </div>
+                  </div>
+              <div class="errors">
+                <div *ngIf="Fechain.invalid && Fechain.touched" class="alert alert-danger col-sm-12" role="alert">
+                  FAVOR DE INGRESAR LA FECHA DE INICIO
+               </div>
+               <div *ngIf="Fechafin.invalid && Fechafin.touched" class="alert alert-danger col-sm-12" role="alert">
+                FAVOR DE INGRESAR LA FECHA FINAL
+             </div>
+              </div>
+            </form>  
+              <br>  
+        <hr>
+        <div *ngIf="list">
+          <h3> Bitácora</h3>  
+          <br>
+          <table id="table"  class="table table-striped table-bordered" style="width:100%">
+              <thead>
+              <tr>
+                  <th>#</th>
+                  <th>Fecha Inicio</th>
+                  <th>Fecha Fin</th>
+                  <th>RFC</th>
+                  
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let client of clients">
+                  <td>{{client.id}}</td>
+                  <td>{{client.firstName}}</td>
+                  <td>{{client.lastName}}</td>
+                  <td>{{client.company}}</td>
+              </tr>
+              </tbody>
+          </table>
+          <hr>   
+        </div>  
+    </div>
+  </div>
+  

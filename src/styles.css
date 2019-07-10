@@ -1,1 +1,138 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    padding: 0;
+    margin: 0;
+}
+
+
+.estilo{
+    background-image: none;
+}
+.navbar{
+    padding: 0;
+    font-size: 18px;
+}
+header nav li {
+    padding:0 10px;
+}
+.container{
+   
+    margin: 0 auto;
+}
+
+.container2{
+    width: 70%;
+    margin: 0 auto 0;
+}
+.container3{
+    width: 70%;
+    margin: 0 auto 0;
+}
+.logo img{
+ width: 50%;
+ margin-top: 20px;
+}
+.formulary{
+    margin-top:20px;
+    padding:20px;
+}
+hr.small-margin {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+hr.red {
+    margin: 10px 0 60px;
+    border-top-color: #dce0e0;
+}
+.red {
+    color: #a22244;
+}
+hr {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border: 0;
+    border-top: 1px solid #eeeeee;
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+hr.red:before {
+    content: " ";
+    width: 35px;
+    height: 5px;
+    background-color: #a22244;
+    display: block;
+    position: absolute;
+}
+
+.formulary{
+    padding: 40px;
+}
+.formulary p{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+footer{
+    background-image: url(./assets/images/fondofooter.jpg);
+    background-size: cover;
+}
+
+a{
+    color:white;
+}
+.logofooter{
+    width: 100%;
+}
+
+
+
+
+@media screen and (max-width: 992px) {
+
+    .logo img{
+        width: 70%;
+       }
+     h3{
+         font-size: 23px;
+     }  
+     .container2{
+        width: 80%;
+     }
+}
+@media screen and (max-width: 768px) {
+
+    .logo img{
+        width: 80%;
+    }
+    .formulary{
+        margin-top:0px; 
+    }
+    .container3{
+        width: 80%;
+    }
+   
+}
+@media screen and (max-width: 576px) { 
+    
+.container2{
+    width: 100%;
+    padding: 0;
+}
+.container3{
+    width: 100%
+}
+.logo img{
+    width: 50%;
+    padding-left: 0px;
+    padding-right: 0px;
+   }
+   h3{
+    font-size: 20px;
+}
+.logofooter{
+        width: 70%;
+    }
+}
