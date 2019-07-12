@@ -9,8 +9,8 @@ const routes: Routes = [
   {path:'control',component:ControlComponent},
   {path:'consulta',component:ConsultaComponent},
   {path:'bitacora',component:BitacoraComponent},
-  {path:'acuse',component:AcuseComponent}
-
+  {path:'acuse',component:AcuseComponent},
+  {path: '**', component: ConsultaComponent}
 ];
 
 @NgModule({

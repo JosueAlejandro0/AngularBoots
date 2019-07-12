@@ -60,6 +60,8 @@ export class ControlComponent implements OnInit {
     });
 
 
-    });  
+    },error=>{
+      console.log(error);
+        $('#errorModal').modal('show')});  
   }
 }

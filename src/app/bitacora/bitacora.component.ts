@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ChangeDetectorRef } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
+import { Observable } from "rxjs/Observable";
+import 'rxjs/add/observable/empty' 
 @Component({
   selector: 'app-bitacora',
   templateUrl: './bitacora.component.html',
@@ -24,11 +25,10 @@ export class BitacoraComponent implements OnInit {
 
   
   onSubmit(Filterform:NgForm){
-    console.log(Filterform)
-    console.log(Filterform.value)
+    
     return this.http.post(this.url,Filterform.value, { headers: {'Content-Type': 'application/json','Access-Control-Allow-Origin': '*' }, responseType: 'text'  })
     .subscribe( resp =>{
-        console.log(resp);
+       console.log(resp);
         this.list=true;
         this.http.get('https://5a5a9e00bc6e340012a03796.mockapi.io/clients').subscribe((data: any[]) => {
         this.clients = data;
@@ -62,9 +62,16 @@ export class BitacoraComponent implements OnInit {
       dom: 'Bfrtip',
       buttons: ['csv']});
     });
+  
 
+      },error=>{
+          $('#errorModal').modal('show')
+        });  
 
-    });  
-  }
+  
+    
+  
+  
+}
 
 }
