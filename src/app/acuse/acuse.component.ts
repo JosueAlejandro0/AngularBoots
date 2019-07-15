@@ -18,6 +18,8 @@ export class AcuseComponent implements OnInit {
     return this.http.post(this.url,Filterform.value, { headers: {'Content-Type': 'application/json','Access-Control-Allow-Origin': '*' }, responseType: 'text'  })
     .subscribe( resp =>{
         console.log(resp);
-    });  
+    },error=>{
+      console.log(error);
+        $('#errorModal').modal('show')});  
   }
 }

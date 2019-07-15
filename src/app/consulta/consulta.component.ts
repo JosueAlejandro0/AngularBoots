@@ -70,7 +70,7 @@ export class ConsultaComponent implements OnInit {
       return this.http.post(this.url,JsonPost, { headers: {'Content-Type': 'application/json','Access-Control-Allow-Origin': '*' },responseType: 'text'})
       .subscribe( resp =>{
         console.log(resp);
-//Primera lista
+
         this.list=true;
         this.http.get('https://5a5a9e00bc6e340012a03796.mockapi.io/clients').subscribe((data: any[]) => {
         this.clients = data;
@@ -101,9 +101,10 @@ export class ConsultaComponent implements OnInit {
                "sSortDescending": ": Activar para ordenar la columna de manera descendente"
             }},  
       scrollX: true,
-      responsive: true});
+    destroy:true
+  });
     });
-//Segunda Lista
+
 
       },error=>{
         console.log(error);
